@@ -109,6 +109,8 @@ repositories {
     }
 
     maven { url 'https://maven.blamejared.com' } // Patchouli
+
+    maven { url 'https://dvs1.progwml6.com/files/maven/' } // JEI
 }
 
 dependencies {
@@ -123,22 +125,20 @@ dependencies {
     implementation files('libs/TerraFirmaCraft-Forge-1.20.1-indev.jar')
 
     // Patchouli
-    compileOnly(fg.deobf("vazkii.patchouli:Patchouli:1.20.1-81-FORGE"))
-    runtimeOnly(fg.deobf("vazkii.patchouli:Patchouli:1.20.1-81-FORGE"))
+    compileOnly fg.deobf("vazkii.patchouli:Patchouli:1.20.1-81-FORGE")
+    runtimeOnly fg.deobf("vazkii.patchouli:Patchouli:1.20.1-81-FORGE")
 
     // Jade / The One Probe
-    compileOnly(fg.deobf("curse.maven:jade-324717:4614153"))
-    compileOnly(fg.deobf("curse.maven:top-245211:4629624"))
+    compileOnly fg.deobf("curse.maven:jade-324717:4614153")
+    compileOnly fg.deobf("curse.maven:top-245211:4629624")
 
     // Only use Jade at runtime
-    runtimeOnly(fg.deobf("curse.maven:jade-324717:4614153"))
+    runtimeOnly fg.deobf("curse.maven:jade-324717:4614153")
 
-    // Example mod dependency with JEI - using fg.deobf() ensures the dependency is remapped to your development mappings
-    // The JEI API is declared for compile time use, while the full JEI artifact is used at runtime
-    // TODO: Setup JEI
-    // compileOnly fg.deobf("mezz.jei:jei-${mc_version}-common-api:${jei_version}")
-    // compileOnly fg.deobf("mezz.jei:jei-${mc_version}-forge-api:${jei_version}")
-    // runtimeOnly fg.deobf("mezz.jei:jei-${mc_version}-forge:${jei_version}")
+    // JEI
+    compileOnly fg.deobf("mezz.jei:jei-${minecraft_version}-common-api:${jei_version}")
+    compileOnly fg.deobf("mezz.jei:jei-${minecraft_version}-forge-api:${jei_version}")
+    runtimeOnly fg.deobf("mezz.jei:jei-${minecraft_version}-forge:${jei_version}")
 
     // Example mod dependency using a mod jar from ./libs with a flat dir repository
     // This maps to ./libs/coolmod-${mc_version}-${coolmod_version}.jar
