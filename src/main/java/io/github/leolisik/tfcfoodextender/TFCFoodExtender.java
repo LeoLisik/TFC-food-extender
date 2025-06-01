@@ -1,6 +1,7 @@
 package io.github.leolisik.tfcfoodextender;
 
 import com.mojang.logging.LogUtils;
+import io.github.leolisik.tfcfoodextender.common.FECreativeTabs;
 import io.github.leolisik.tfcfoodextender.common.blockentities.FEBlockEntities;
 import io.github.leolisik.tfcfoodextender.common.blocks.FEBlocks;
 import io.github.leolisik.tfcfoodextender.common.items.FEItems;
@@ -33,6 +34,7 @@ public class TFCFoodExtender
         FEItems.ITEMS.register(modEventBus);
         FEBlocks.BLOCKS.register(modEventBus);
         FEBlockEntities.BLOCK_ENTITIES.register(modEventBus);
+        FECreativeTabs.CREATIVE_TABS.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 
