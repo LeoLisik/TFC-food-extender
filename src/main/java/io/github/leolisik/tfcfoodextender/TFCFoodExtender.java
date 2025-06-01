@@ -1,6 +1,9 @@
 package io.github.leolisik.tfcfoodextender;
 
 import com.mojang.logging.LogUtils;
+import io.github.leolisik.tfcfoodextender.common.blockentities.FEBlockEntities;
+import io.github.leolisik.tfcfoodextender.common.blocks.FEBlocks;
+import io.github.leolisik.tfcfoodextender.common.items.FEItems;
 import net.minecraft.client.Minecraft;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.api.distmarker.Dist;
@@ -26,6 +29,10 @@ public class TFCFoodExtender
     @SuppressWarnings("removal")
     public TFCFoodExtender() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+
+        FEItems.ITEMS.register(modEventBus);
+        FEBlocks.BLOCKS.register(modEventBus);
+        FEBlockEntities.BLOCK_ENTITIES.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 

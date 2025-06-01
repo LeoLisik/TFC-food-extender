@@ -1,0 +1,8 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "parent": "block/crop",
+  "render_type": "cutout",
+  "textures": {
+    "crop": "tfcfe:block/crop/buckwheat_dead_young"
+  }
+}
