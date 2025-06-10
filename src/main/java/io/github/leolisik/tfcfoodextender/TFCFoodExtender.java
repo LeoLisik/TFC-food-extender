@@ -6,12 +6,16 @@ import io.github.leolisik.tfcfoodextender.common.blockentities.FEBlockEntities;
 import io.github.leolisik.tfcfoodextender.common.blocks.FEBlocks;
 import io.github.leolisik.tfcfoodextender.common.items.FEItems;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.renderer.RenderType;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
@@ -19,6 +23,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.RegistryObject;
 import org.slf4j.Logger;
 
 @Mod(TFCFoodExtender.MODID)
@@ -26,6 +31,8 @@ public class TFCFoodExtender
 {
     public static final String MODID = "tfcfe";
     private static final Logger LOGGER = LogUtils.getLogger();
+    //public static final boolean isMNALoaded = ModList.get().isLoaded("mna");
+    public static final boolean isMNALoaded = true;
 
     @SuppressWarnings("removal")
     public TFCFoodExtender() {
@@ -69,8 +76,20 @@ public class TFCFoodExtender
     public static class ClientModEvents
     {
         @SubscribeEvent
+        @SuppressWarnings("removal")
         public static void onClientSetup(FMLClientSetupEvent event)
         {
+            event.enqueueWork(() -> {
+                for (RegistryObject<Block> crop : FEBlocks.CROPS.values()) {
+                    ItemBlockRenderTypes.setRenderLayer(crop.get(), RenderType.cutout());
+                }
+                for (RegistryObject<Block> crop : FEBlocks.WILD_CROPS.values()) {
+                    ItemBlockRenderTypes.setRenderLayer(crop.get(), RenderType.cutout());
+                }
+                for (RegistryObject<Block> crop : FEBlocks.DEAD_CROPS.values()) {
+                    ItemBlockRenderTypes.setRenderLayer(crop.get(), RenderType.cutout());
+                }
+            });
             // Some client setup code
             LOGGER.info("HELLO FROM CLIENT SETUP");
             LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
