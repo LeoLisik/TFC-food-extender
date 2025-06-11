@@ -21,7 +21,7 @@ class Crop:
                                 })
             generate_png(f'/assets/{self.mod_id}/textures/block/crop', f'{self.name}_{i}')
         self.rm.lang({
-            f"block.{self.mod_id}.crop.{self.name}": f"{self.name.capitalize()}"
+            f"block.{self.mod_id}.crop.{self.name}": f"{' '.join(word.capitalize() for word in self.name.split('_'))}"
         })
         return self
 
@@ -39,7 +39,7 @@ class Crop:
         })
         generate_png(f'/assets/{self.mod_id}/textures/block/crop', f'{self.name}_dead_young')
         self.rm.lang({
-            f"block.{self.mod_id}.dead_crop.{self.name}": f"Dead {self.name.capitalize()}"
+            f"block.{self.mod_id}.dead_crop.{self.name}": f"Dead {' '.join(word.capitalize() for word in self.name.split('_'))}"
         })
         return self
 
@@ -54,7 +54,7 @@ class Crop:
         generate_png(f'/assets/{self.mod_id}/textures/block/crop', f'{self.name}_wild')
         self.rm.item_model(f'wild_crop/{self.name}', parent=f'{self.mod_id}:block/wild_crop/{self.name}', no_textures=True)
         self.rm.lang({
-            f"block.{self.mod_id}.wild_crop.{self.name}": f"Wild {self.name.capitalize()}"
+            f"block.{self.mod_id}.wild_crop.{self.name}": f"Wild {' '.join(word.capitalize() for word in self.name.split('_'))}"
         })
         return self
 
@@ -64,7 +64,7 @@ class Crop:
         })
         generate_png(f'/assets/{self.mod_id}/textures/item/seeds', f'{self.name}')
         self.rm.lang({
-            f"item.{self.mod_id}.seeds.{self.name}": f"{self.name.capitalize()} Seeds"
+            f"item.{self.mod_id}.seeds.{self.name}": f"{' '.join(word.capitalize() for word in self.name.split('_'))} Seeds"
         })
         return self
 
@@ -85,7 +85,7 @@ class Crop:
             "decay_modifier": decay_modifier
         })
         self.rm.lang({
-            f"item.{self.mod_id}.food.{name}": f"{name.capitalize()}"
+            f"item.{self.mod_id}.food.{name}": ' '.join(word.capitalize() for word in name.split('_'))
         })
         return self
 
