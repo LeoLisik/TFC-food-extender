@@ -1,0 +1,11 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "variants": {
+    "mature=true": {
+      "model": "tfcfe:block/dead_crop/wakebloom"
+    },
+    "mature=false": {
+      "model": "tfcfe:block/dead_crop/wakebloom_young"
+    }
+  }
+}

@@ -22,21 +22,21 @@ def generate_MNACrops():
      .generate_loot_table("mna:wakebloom")
      .generate_climate_range(25, 100, 0, -4, 35, 5))
 
-    (Crop(rm, "aum", "tfcfe", 6)
-     .generate_default_crop()
-     .generate_dead_crop()
-     .generate_wild_crop()
-     .generate_seed_item()
-     .generate_loot_table("mna:aum")
-     .generate_climate_range(25, 100, 0, -4, 35, 5))
+    #(Crop(rm, "aum", "tfcfe", 6)
+    # .generate_default_crop()
+    # .generate_dead_crop()
+    # .generate_wild_crop()
+    # .generate_seed_item()
+    # .generate_loot_table("mna:aum")
+    # .generate_climate_range(25, 100, 0, -4, 35, 5))
 
-    (Crop(rm, "cerublossom", "tfcfe", 6)
-     .generate_default_crop()
-     .generate_dead_crop()
-     .generate_wild_crop()
-     .generate_seed_item()
-     .generate_loot_table("mna:cerublossom")
-     .generate_climate_range(25, 100, 0, -4, 35, 5))
+    #(Crop(rm, "cerublossom", "tfcfe", 6)
+    # .generate_default_crop()
+    # .generate_dead_crop()
+    # .generate_wild_crop()
+    # .generate_seed_item()
+    # .generate_loot_table("mna:cerublossom")
+    # .generate_climate_range(25, 100, 0, -4, 35, 5))
 
     (Crop(rm, "tarma_root", "tfcfe", 6)
      .generate_default_crop()
@@ -57,6 +57,9 @@ def generate_MNACrops():
 
 if __name__ == "__main__":
     rm = ResourceManager('tfcfe', 'src/main/resources')
+    rm.lang({
+        f"tfcfe.creative_tab.main": "TFC Food Extender"
+    })
     generate_Crops()
     generate_MNACrops()
     rm.flush()

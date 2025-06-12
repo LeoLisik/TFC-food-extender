@@ -23,6 +23,8 @@ import java.util.function.Supplier;
 @SuppressWarnings("unused")
 public enum MNACrop implements StringRepresentable, ICropLike {
     DESERT_NOVA(NutrientType.PHOSPHOROUS, 6),
+    WAKEBLOOM(NutrientType.PHOSPHOROUS, 6),
+    TARMA_ROOT(NutrientType.PHOSPHOROUS, 6),
     ;
 
     private final String serializedName;
