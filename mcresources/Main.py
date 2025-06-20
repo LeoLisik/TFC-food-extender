@@ -20,23 +20,23 @@ def generate_MNACrops():
      .generate_wild_crop()
      .generate_seed_item()
      .generate_loot_table("mna:wakebloom")
+     .generate_climate_range(70, 100, 5, -10, 25, 10))
+
+    (Crop(rm, "aum", "tfcfe", 6)
+     .generate_default_crop()
+     .generate_dead_crop()
+     .generate_wild_crop()
+     .generate_seed_item()
+     .generate_loot_table("mna:aum")
      .generate_climate_range(25, 100, 0, -4, 35, 5))
 
-    #(Crop(rm, "aum", "tfcfe", 6)
-    # .generate_default_crop()
-    # .generate_dead_crop()
-    # .generate_wild_crop()
-    # .generate_seed_item()
-    # .generate_loot_table("mna:aum")
-    # .generate_climate_range(25, 100, 0, -4, 35, 5))
-
-    #(Crop(rm, "cerublossom", "tfcfe", 6)
-    # .generate_default_crop()
-    # .generate_dead_crop()
-    # .generate_wild_crop()
-    # .generate_seed_item()
-    # .generate_loot_table("mna:cerublossom")
-    # .generate_climate_range(25, 100, 0, -4, 35, 5))
+    (Crop(rm, "cerublossom", "tfcfe", 6)
+     .generate_default_crop()
+     .generate_dead_crop()
+     .generate_wild_crop()
+     .generate_seed_item()
+     .generate_loot_table("mna:cerublossom")
+     .generate_climate_range(25, 100, 0, -4, 35, 5))
 
     (Crop(rm, "tarma_root", "tfcfe", 6)
      .generate_default_crop()
@@ -44,7 +44,7 @@ def generate_MNACrops():
      .generate_wild_crop()
      .generate_seed_item()
      .generate_loot_table("mna:tarma_root")
-     .generate_climate_range(25, 100, 0, -4, 35, 5))
+     .generate_climate_range(70, 100, 5, -10, 25, 10))
 
     (Crop(rm, "desert_nova", "tfcfe", 6)
      .generate_default_crop()
@@ -52,7 +52,7 @@ def generate_MNACrops():
      .generate_wild_crop()
      .generate_seed_item()
      .generate_loot_table("mna:desert_nova")
-     .generate_climate_range(25, 100, 0, -4, 35, 5))
+     .generate_climate_range(10, 40, 10, 5, 40, 10))
 
 
 if __name__ == "__main__":
