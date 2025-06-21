@@ -31,8 +31,8 @@ public class TFCFoodExtender
 {
     public static final String MODID = "tfcfe";
     private static final Logger LOGGER = LogUtils.getLogger();
-    public static final boolean isMNALoaded = ModList.get().isLoaded("mna");
-    //public static final boolean isMNALoaded = true;
+    //public static final boolean isMNALoaded = ModList.get().isLoaded("mna");
+    public static final boolean isMNALoaded = true;
 
     @SuppressWarnings("removal")
     public TFCFoodExtender() {

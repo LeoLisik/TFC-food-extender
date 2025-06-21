@@ -1,0 +1,7 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "parent": "tfcfe:block/wild_crop/crop",
+  "textures": {
+    "crop": "tfcfe:block/crop/cerublossom_wild"
+  }
+}
