@@ -1,0 +1,35 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:not",
+          "value": {
+            "type": "forge:mod_loaded",
+            "modid": "bloodmagic"
+          }
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shapeless",
+        "ingredients": [
+          {
+            "tag": "tfc:seeds"
+          },
+          {
+            "item": "tfc:dirt/sandy_loam"
+          },
+          {
+            "item": "tfc:plant/grape_hyacinth"
+          }
+        ],
+        "result": {
+          "item": "tfcfe:seeds/cerublossom",
+          "count": 1
+        }
+      }
+    }
+  ]
+}

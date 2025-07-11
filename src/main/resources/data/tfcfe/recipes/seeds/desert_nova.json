@@ -1,0 +1,35 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:not",
+          "value": {
+            "type": "forge:mod_loaded",
+            "modid": "bloodmagic"
+          }
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shapeless",
+        "ingredients": [
+          {
+            "tag": "tfc:seeds"
+          },
+          {
+            "tag": "forge:sand"
+          },
+          {
+            "item": "tfc:plant/barrel_cactus"
+          }
+        ],
+        "result": {
+          "item": "tfcfe:seeds/desert_nova",
+          "count": 1
+        }
+      }
+    }
+  ]
+}

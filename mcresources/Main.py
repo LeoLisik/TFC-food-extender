@@ -22,7 +22,16 @@ def generate_MNACrops():
      .generate_seed_item()
      .generate_loot_table("mna:wakebloom")
      .generate_climate_range(70, 100, 5, -10, 25, 10)
-     .generate_bloodmagic_altar_seed_craft({"item": "tfcfe:prepared_seeds/wakebloom"}, 2000, 5, 5, 1))
+     .generate_bloodmagic_altar_seed_craft({"item": "tfcfe:prepared_seeds/wakebloom"}, 2000, 5, 5, 1)
+     .generate_seed_craft(["#tfc:seeds", "tfc:plant/water_lily", "tfc:rock/gravel/shale"], 1, False, conditions=[
+        {
+          "type": "forge:not",
+          "value": {
+            "type": "forge:mod_loaded",
+            "modid": "bloodmagic"
+          }
+        }
+      ]))
 
     (Crop(rm, "aum", "tfcfe", 6)
      .generate_default_crop()
@@ -31,7 +40,17 @@ def generate_MNACrops():
      .generate_seed_item()
      .generate_loot_table("mna:aum")
      .generate_climate_range(25, 100, 0, -4, 35, 5)
-     .generate_bloodmagic_altar_seed_craft({"item": "tfcfe:prepared_seeds/aum"}, 2000, 5, 5, 1))
+     .generate_bloodmagic_altar_seed_craft({"item": "tfcfe:prepared_seeds/aum"}, 2000, 5, 5, 1)
+     .generate_seed_craft(["#tfc:seeds", "tfc:dirt/sandy_loam", "tfc:plant/primrose", "tfc:plant/butterfly_milkweed"], 1, False, conditions=[
+        {
+            "type": "forge:not",
+            "value": {
+                "type": "forge:mod_loaded",
+                "modid": "bloodmagic"
+            }
+        }
+    ])
+     )
 
     (Crop(rm, "cerublossom", "tfcfe", 6)
      .generate_default_crop()
@@ -40,7 +59,17 @@ def generate_MNACrops():
      .generate_seed_item()
      .generate_loot_table("mna:cerublossom")
      .generate_climate_range(25, 100, 0, -4, 35, 5)
-     .generate_bloodmagic_altar_seed_craft({"item": "tfcfe:prepared_seeds/cerublossom"}, 2000, 5, 5, 1))
+     .generate_bloodmagic_altar_seed_craft({"item": "tfcfe:prepared_seeds/cerublossom"}, 2000, 5, 5, 1)
+     .generate_seed_craft(["#tfc:seeds", "tfc:dirt/sandy_loam", "tfc:plant/grape_hyacinth"], 1, False, conditions=[
+        {
+            "type": "forge:not",
+            "value": {
+                "type": "forge:mod_loaded",
+                "modid": "bloodmagic"
+            }
+        }
+    ])
+     )
 
     (Crop(rm, "tarma_root", "tfcfe", 6)
      .generate_default_crop()
@@ -49,7 +78,17 @@ def generate_MNACrops():
      .generate_seed_item()
      .generate_loot_table("mna:tarma_root")
      .generate_climate_range(70, 100, 5, -10, 25, 10)
-     .generate_bloodmagic_altar_seed_craft({"item": "tfcfe:prepared_seeds/tarma_root"}, 2000, 5, 5, 1))
+     .generate_bloodmagic_altar_seed_craft({"item": "tfcfe:prepared_seeds/tarma_root"}, 2000, 5, 5, 1)
+     .generate_seed_craft(["#tfc:seeds", "tfc:plant/arrowhead", "tfc:food/cattail_root", "tfc:mud/loam"], 1, False, conditions=[
+        {
+            "type": "forge:not",
+            "value": {
+                "type": "forge:mod_loaded",
+                "modid": "bloodmagic"
+            }
+        }
+    ])
+     )
 
     (Crop(rm, "desert_nova", "tfcfe", 6)
      .generate_default_crop()
@@ -58,41 +97,51 @@ def generate_MNACrops():
      .generate_seed_item()
      .generate_loot_table("mna:desert_nova")
      .generate_climate_range(10, 40, 10, 5, 40, 10)
-     .generate_bloodmagic_altar_seed_craft({"item": "tfcfe:prepared_seeds/desert_nova"}, 2000, 5, 5, 1))
+     .generate_bloodmagic_altar_seed_craft({"item": "tfcfe:prepared_seeds/desert_nova"}, 2000, 5, 5, 1)
+     .generate_seed_craft(["#tfc:seeds", "#forge:sand", "tfc:plant/barrel_cactus"], 1, False, conditions=[
+        {
+            "type": "forge:not",
+            "value": {
+                "type": "forge:mod_loaded",
+                "modid": "bloodmagic"
+            }
+        }
+    ])
+     )
 
 
 def generate_prepared_seeds():
     (Item(rm, "prepared_seeds", "wakebloom", "tfcfe")
-     .generate_base()
-     .generate_vanilla_craft(
+    .generate_base()
+    .generate_vanilla_craft(
         ingredients=['#tfc:seeds', 'tfc:plant/water_lily', 'tfc:rock/gravel/shale'],
         result_count=1,
         shaped=False))
 
     (Item(rm, "prepared_seeds", "aum", "tfcfe")
-     .generate_base()
-     .generate_vanilla_craft(
+    .generate_base()
+    .generate_vanilla_craft(
         ingredients=['#tfc:seeds', 'tfc:dirt/sandy_loam', 'tfc:plant/primrose', 'tfc:plant/butterfly_milkweed'],
         result_count=1,
         shaped=False))
 
     (Item(rm, "prepared_seeds", "cerublossom", "tfcfe")
-     .generate_base()
-     .generate_vanilla_craft(
+    .generate_base()
+    .generate_vanilla_craft(
         ingredients=['#tfc:seeds', 'tfc:dirt/sandy_loam', 'tfc:plant/grape_hyacinth'],
         result_count=1,
         shaped=False))
 
     (Item(rm, "prepared_seeds", "tarma_root", "tfcfe")
-     .generate_base()
-     .generate_vanilla_craft(
+    .generate_base()
+    .generate_vanilla_craft(
         ingredients=['#tfc:seeds', 'tfc:plant/arrowhead', 'tfc:food/cattail_root', 'tfc:mud/loam'],
         result_count=1,
         shaped=False))
 
     (Item(rm, "prepared_seeds", "desert_nova", "tfcfe")
-     .generate_base()
-     .generate_vanilla_craft(
+    .generate_base()
+    .generate_vanilla_craft(
         ingredients=['#tfc:seeds', '#forge:sand', 'tfc:plant/barrel_cactus'],
         result_count=1,
         shaped=False))

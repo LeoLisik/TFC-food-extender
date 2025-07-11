@@ -30,10 +30,10 @@ public class FEItems {
 
         if (TFCFoodExtender.isMNALoaded) {
             CROP_SEEDS.putAll(Helpers.mapOfKeys(MNACrop.class, crop -> register("seeds/" + crop.name(), () -> new ItemNameBlockItem(FEBlocks.CROPS.get(crop).get(), new Item.Properties()))));
-        }
 
-        if (TFCFoodExtender.isBloodMagicLoaded) {
-            PREPARED_SEEDS.putAll(Helpers.mapOfKeys(PreparedSeed.class, seed -> register("prepared_seeds/" + seed.name())));
+            if (TFCFoodExtender.isBloodMagicLoaded) {
+                PREPARED_SEEDS.putAll(Helpers.mapOfKeys(PreparedSeed.class, seed -> register("prepared_seeds/" + seed.name())));
+            }
         }
     }
 

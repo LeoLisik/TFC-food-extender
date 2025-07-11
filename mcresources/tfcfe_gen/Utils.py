@@ -8,7 +8,18 @@ def generate_png(path, file, resource_dir='src/main/resources'):
     open(f'{dir}/{file}.png', 'a+')
 
 
-def generate_vanilla_craft(rm: ResourceManager, mod_id, path, name, ingredients, result_count=1, shaped=True, pattern=None, group=None):
+def generate_vanilla_craft(
+    rm: ResourceManager,
+    mod_id: str,
+    path: str,
+    name: str,
+    ingredients,
+    result_count: int = 1,
+    shaped: bool = True,
+    pattern: list = None,
+    group: str = None,
+    conditions: list = None
+):
     if shaped:
         if pattern is None:
             raise ValueError("Shaped recipe requires a pattern")
@@ -25,8 +36,7 @@ def generate_vanilla_craft(rm: ResourceManager, mod_id, path, name, ingredients,
             recipe["key"][key] = (
                 {"tag": ingredient[1:]} if ingredient.startswith("#") else {"item": ingredient}
             )
-
-    if not shaped:
+    else:
         recipe = {
             "type": "minecraft:crafting_shapeless",
             "ingredients": [],
@@ -43,7 +53,20 @@ def generate_vanilla_craft(rm: ResourceManager, mod_id, path, name, ingredients,
     if group:
         recipe["group"] = group
 
-    rm.data(f'recipes/{path}/{name}', data_in=recipe)
+    # Оборачиваем в forge:conditional, если переданы conditions
+    if conditions:
+        conditional_recipe = {
+            "type": "forge:conditional",
+            "recipes": [
+                {
+                    "conditions": conditions,
+                    "recipe": recipe
+                }
+            ]
+        }
+        rm.data(f"recipes/{path}/{name}", data_in=conditional_recipe)
+    else:
+        rm.data(f"recipes/{path}/{name}", data_in=recipe)
 
 
 def generate_bloodmagic_altar_craft(
@@ -66,7 +89,7 @@ def generate_bloodmagic_altar_craft(
         "upgradeLevel": upgrade_level
     }
 
-    if conditions:
-        recipe["conditions"] = conditions
+    #if conditions:
+    #    recipe["conditions"] = conditions
 
-    rm.recipe("../../bloodmagic/recipes/altar/" + name, "bloodmagic:altar", recipe)
+    rm.recipe("../../bloodmagic/recipes/altar/" + name, "bloodmagic:altar", recipe, conditions=conditions)

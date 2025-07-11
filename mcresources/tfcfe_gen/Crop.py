@@ -161,9 +161,9 @@ class Crop:
         return self
 
     # TODO: Vanilla craft
-    #def generate_seed_craft(self):
-
-    #    return self
+    def generate_seed_craft(self, ingredients, result_count=1, shaped=True, pattern=None, group=None, conditions=None):
+        generate_vanilla_craft(self.rm, self.mod_id, "seeds", self.name, ingredients, result_count, shaped, pattern, group, conditions)
+        return self
 
     def generate_bloodmagic_altar_seed_craft(self, input_item, syphon, consumption_rate, drain_rate, upgrade_level):
         generate_bloodmagic_altar_craft(self.rm, self.name, input_item, {"item": f"{self.mod_id}:seeds/{self.name}"}, syphon, consumption_rate, drain_rate, upgrade_level)
