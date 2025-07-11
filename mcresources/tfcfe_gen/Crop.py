@@ -159,3 +159,12 @@ class Crop:
             "temperature_wiggle_range": temperature_wiggle_range
         })
         return self
+
+    # TODO: Vanilla craft
+    #def generate_seed_craft(self):
+
+    #    return self
+
+    def generate_bloodmagic_altar_seed_craft(self, input_item, syphon, consumption_rate, drain_rate, upgrade_level):
+        generate_bloodmagic_altar_craft(self.rm, self.name, input_item, {"item": f"{self.mod_id}:seeds/{self.name}"}, syphon, consumption_rate, drain_rate, upgrade_level)
+        return self

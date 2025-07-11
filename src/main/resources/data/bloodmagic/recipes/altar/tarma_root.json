@@ -1,0 +1,14 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "bloodmagic:altar",
+  "altarSyphon": 2000,
+  "consumptionRate": 5,
+  "drainRate": 5,
+  "input": {
+    "item": "tfcfe:prepared_seeds/tarma_root"
+  },
+  "output": {
+    "item": "tfcfe:seeds/tarma_root"
+  },
+  "upgradeLevel": 1
+}

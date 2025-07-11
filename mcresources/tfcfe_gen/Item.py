@@ -19,40 +19,6 @@ class Item:
         return self
 
     def generate_vanilla_craft(self, ingredients, result_count=1, shaped=True, pattern=None, group=None):
-        if shaped:
-            if pattern is None:
-                raise ValueError("Shaped recipe requires a pattern")
-            recipe = {
-                "type": "minecraft:crafting_shaped",
-                "pattern": pattern,
-                "key": {},
-                "result": {
-                    "item": f"{self.mod_id}:{self.path}/{self.name}",
-                    "count": result_count
-                }
-            }
-            for key, ingredient in ingredients.items():
-                recipe["key"][key] = (
-                    {"tag": ingredient[1:]} if ingredient.startswith("#") else {"item": ingredient}
-                )
-
-        if not shaped:
-            recipe = {
-                "type": "minecraft:crafting_shapeless",
-                "ingredients": [],
-                "result": {
-                    "item": f"{self.mod_id}:{self.path}/{self.name}",
-                    "count": result_count
-                }
-            }
-            for ingredient in ingredients:
-                recipe["ingredients"].append(
-                    {"tag": ingredient[1:]} if ingredient.startswith("#") else {"item": ingredient}
-                )
-
-        if group:
-            recipe["group"] = group
-
-        self.rm.data(f'recipes/{self.path}/{self.name}.json', data_in=recipe)
+        generate_vanilla_craft(self.rm, self.mod_id, self.path, self.name, ingredients, result_count, shaped, pattern, group)
         return self
 
