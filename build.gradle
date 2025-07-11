@@ -111,6 +111,7 @@ repositories {
     maven { url 'https://maven.blamejared.com' } // Patchouli
 
     maven { url 'https://dvs1.progwml6.com/files/maven/' } // JEI
+
 }
 
 dependencies {
@@ -123,6 +124,14 @@ dependencies {
 
     // TerraFirmaCraft
     implementation files('libs/TerraFirmaCraft-Forge-1.20.1-indev.jar')
+
+    // BloodMagic
+    implementation fg.deobf("curse.maven:blood-magic-224791:5290993")
+
+    // Mana and artifice
+    runtimeOnly fg.deobf("curse.maven:mana-and-artifice-406360:6056053")
+    runtimeOnly fg.deobf("curse.maven:curios-309927:6418456")
+    runtimeOnly fg.deobf("curse.maven:geckolib-388172:5675221")
 
     // Patchouli
     compileOnly fg.deobf("vazkii.patchouli:Patchouli:1.20.1-81-FORGE")
@@ -139,6 +148,7 @@ dependencies {
     compileOnly fg.deobf("mezz.jei:jei-${minecraft_version}-common-api:${jei_version}")
     compileOnly fg.deobf("mezz.jei:jei-${minecraft_version}-forge-api:${jei_version}")
     runtimeOnly fg.deobf("mezz.jei:jei-${minecraft_version}-forge:${jei_version}")
+
 
     // Example mod dependency using a mod jar from ./libs with a flat dir repository
     // This maps to ./libs/coolmod-${mc_version}-${coolmod_version}.jar
