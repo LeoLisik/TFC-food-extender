@@ -34,6 +34,9 @@ public class TFCFoodExtender
     public static final boolean isMNALoaded = ModList.get().isLoaded("mna");
     //public static final boolean isMNALoaded = true;
 
+    public static final boolean isBloodMagicLoaded = ModList.get().isLoaded("bloodmagic");
+    //public static final boolean isBloodMagicLoaded = true;
+
     @SuppressWarnings("removal")
     public TFCFoodExtender() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();

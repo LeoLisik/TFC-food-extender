@@ -25,3 +25,5 @@
 
 __pycache__
 *.pyc
+
+!/tfcfe_gen/**/*.py

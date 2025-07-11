@@ -34,6 +34,9 @@ public final class FECreativeTabs {
         for (var seed : FEItems.CROP_SEEDS.values()) {
             accept(out, seed);
         }
+        for (var prepared_seed : FEItems.PREPARED_SEEDS.values()) {
+            accept(out, prepared_seed);
+        }
     }
 
     private static <T extends ItemLike, R extends Supplier<T>> void accept(CreativeModeTab.Output out, R reg)

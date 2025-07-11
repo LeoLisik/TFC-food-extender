@@ -1,0 +1,19 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "tfc:seeds"
+    },
+    {
+      "item": "tfc:dirt/sandy_loam"
+    },
+    {
+      "item": "tfc:plant/grape_hyacinth"
+    }
+  ],
+  "result": {
+    "item": "tfcfe:prepared_seeds/cerublossom",
+    "count": 1
+  }
+}

@@ -1,4 +1,5 @@
 from tfcfe_gen.Crop import Crop
+from tfcfe_gen.Item import Item
 from mcresources import ResourceManager
 
 
@@ -55,6 +56,43 @@ def generate_MNACrops():
      .generate_climate_range(10, 40, 10, 5, 40, 10))
 
 
+def generate_prepared_seeds():
+    (Item(rm, "prepared_seeds", "wakebloom", "tfcfe")
+     .generate_base()
+     .generate_vanilla_craft(
+        ingredients=['#tfc:seeds', 'tfc:plant/water_lily', 'tfc:rock/gravel/shale'],
+        result_count=1,
+        shaped=False))
+
+    (Item(rm, "prepared_seeds", "aum", "tfcfe")
+     .generate_base()
+     .generate_vanilla_craft(
+        ingredients=['#tfc:seeds', 'tfc:dirt/sandy_loam', 'tfc:plant/primrose', 'tfc:plant/butterfly_milkweed'],
+        result_count=1,
+        shaped=False))
+
+    (Item(rm, "prepared_seeds", "cerublossom", "tfcfe")
+     .generate_base()
+     .generate_vanilla_craft(
+        ingredients=['#tfc:seeds', 'tfc:dirt/sandy_loam', 'tfc:plant/grape_hyacinth'],
+        result_count=1,
+        shaped=False))
+
+    (Item(rm, "prepared_seeds", "tarma_root", "tfcfe")
+     .generate_base()
+     .generate_vanilla_craft(
+        ingredients=['#tfc:seeds', 'tfc:plant/arrowhead', 'tfc:food/cattail_root', 'tfc:mud/loam'],
+        result_count=1,
+        shaped=False))
+
+    (Item(rm, "prepared_seeds", "desert_nova", "tfcfe")
+     .generate_base()
+     .generate_vanilla_craft(
+        ingredients=['#tfc:seeds', '#forge:sand', 'tfc:plant/barrel_cactus'],
+        result_count=1,
+        shaped=False))
+
+
 if __name__ == "__main__":
     rm = ResourceManager('tfcfe', 'src/main/resources')
     rm.lang({
@@ -62,4 +100,5 @@ if __name__ == "__main__":
     })
     generate_Crops()
     generate_MNACrops()
+    generate_prepared_seeds()
     rm.flush()

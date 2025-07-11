@@ -1,0 +1,19 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "tfc:seeds"
+    },
+    {
+      "item": "tfc:plant/water_lily"
+    },
+    {
+      "item": "tfc:rock/gravel/shale"
+    }
+  ],
+  "result": {
+    "item": "tfcfe:prepared_seeds/wakebloom",
+    "count": 1
+  }
+}
