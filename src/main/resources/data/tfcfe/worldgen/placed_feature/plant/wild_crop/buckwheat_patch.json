@@ -1,0 +1,21 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "feature": "tfcfe:plant/wild_crop/buckwheat_patch",
+  "placement": [
+    {
+      "type": "minecraft:rarity_filter",
+      "chance": 1
+    },
+    {
+      "type": "minecraft:in_square"
+    },
+    {
+      "type": "tfc:climate",
+      "min_temperature": -10,
+      "max_temperature": 50,
+      "min_rainfall": 1,
+      "max_rainfall": 400,
+      "max_forest": "edge"
+    }
+  ]
+}
