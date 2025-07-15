@@ -1,6 +1,8 @@
+from tfcfe_gen.Book import Book
 from tfcfe_gen.Crop import Crop
 from tfcfe_gen.Item import Item
 from mcresources import ResourceManager
+from tfcfe_gen.Utils import mod_loaded
 
 
 def generate_Crops():
@@ -146,13 +148,268 @@ def generate_prepared_seeds():
         result_count=1,
         shaped=False))
 
+def update_tfc_book():
+    book = Book(
+        rm,
+        mod_id='tfc',
+        book_id='field_guide',
+        create_book=False,
+        book_name='Field Guide',
+        landing_text='Welcome to your journey!'
+    )
+
+    category = book.generate_category(
+        category_id='magic',
+        name='Magic start',
+        description='How to start doing magic',
+        icon='mna:animus_dust',
+        sortnum=11,
+        flag='mod:mna'
+    )
+
+    entry = category.generate_entry(
+        entry_id='getting_start_bloodmagic',
+        name='Introduction',
+        icon='minecraft:wheat_seeds',
+        priority=True,
+        flag='&mod:mna,mod:bloodmagic'
+    )
+
+    entry.add_text_page(title="Where to start?", text="To explore magic you need some magic flowers. "
+                                           "To get them, you need to prepare some seeds, then fill them with magic on "
+                                           "blood altar and finally grow seeds like any other crops.")
+    entry.add_text_page(text="Next pages will show you how to prepare seeds and grow them! Do not forget the sequence:$(br)"
+                             "seed->prepared seed->magic seed->magic crop->flower")
+
+    entry.add_crafting_page("tfcfe:prepared_seeds/wakebloom", text="Wakebloom is a lake crop, so try to find ingredients in there")
+    multiblocks = []
+    for age in range(6):
+        multiblocks.append({
+        "pattern": [
+            ["X"],
+            ["Y"],
+            ["0"]
+        ],
+        "mapping": {
+            "X": f"tfcfe:crop/wakebloom[age={age}]",
+            "Y": "tfc:farmland/loam"
+        }
+    })
+    entry.add_tfc_multimultiblock_page(multiblocks, "$(bold)Wakebloom$(br)"
+                                                    "$(bold)$(l:the_world/climate#temperature)Temperature$(): 3 - 40 °C$(br)"
+                                                    "$(bold)$(l:mechanics/hydration)Hydration$(): 35 - 100 %$(br)"
+                                                    "$(bold)Nutrient$(): Phosphorus")
+
+    entry.add_crafting_page("tfcfe:prepared_seeds/aum",
+                            text="Aum is a common crop, so try to find ingredients in forests")
+    multiblocks = []
+    for age in range(6):
+        multiblocks.append({
+            "pattern": [
+                ["X"],
+                ["Y"],
+                ["0"]
+            ],
+            "mapping": {
+                "X": f"tfcfe:crop/aum[age={age}]",
+                "Y": "tfc:farmland/loam"
+            }
+        })
+    entry.add_tfc_multimultiblock_page(multiblocks, "$(bold)Aum$(br)"
+                                                    "$(bold)$(l:the_world/climate#temperature)Temperature$(): 3 - 40 °C$(br)"
+                                                    "$(bold)$(l:mechanics/hydration)Hydration$(): 35 - 100 %$(br)"
+                                                    "$(bold)Nutrient$(): Phosphorus")
+
+    entry.add_crafting_page("tfcfe:prepared_seeds/cerublossom",
+                            text="Aum is a common crop, so try to find ingredients in forests")
+    multiblocks = []
+    for age in range(6):
+        multiblocks.append({
+            "pattern": [
+                ["X"],
+                ["Y"],
+                ["0"]
+            ],
+            "mapping": {
+                "X": f"tfcfe:crop/cerublossom[age={age}]",
+                "Y": "tfc:farmland/loam"
+            }
+        })
+    entry.add_tfc_multimultiblock_page(multiblocks, "$(bold)Cerublossom$(br)"
+                                                    "$(bold)$(l:the_world/climate#temperature)Temperature$(): 3 - 40 °C$(br)"
+                                                    "$(bold)$(l:mechanics/hydration)Hydration$(): 35 - 100 %$(br)"
+                                                    "$(bold)Nutrient$(): Phosphorus")
+
+    entry.add_crafting_page("tfcfe:prepared_seeds/tarma_root",
+                            text="Tarma root is a swamp crop, so try to find ingredients in there")
+    multiblocks = []
+    for age in range(6):
+        multiblocks.append({
+            "pattern": [
+                ["X"],
+                ["Y"],
+                ["0"]
+            ],
+            "mapping": {
+                "X": f"tfcfe:crop/tarma_root[age={age}]",
+                "Y": "tfc:farmland/loam"
+            }
+        })
+    entry.add_tfc_multimultiblock_page(multiblocks, "$(bold)Tarma Root$(br)"
+                                                    "$(bold)$(l:the_world/climate#temperature)Temperature$(): 3 - 40 °C$(br)"
+                                                    "$(bold)$(l:mechanics/hydration)Hydration$(): 35 - 100 %$(br)"
+                                                    "$(bold)Nutrient$(): Phosphorus")
+
+    entry.add_crafting_page("tfcfe:prepared_seeds/desert_nova",
+                            text="Desert nova is a desert crop, so try to find ingredients in there")
+    multiblocks = []
+    for age in range(6):
+        multiblocks.append({
+            "pattern": [
+                ["X"],
+                ["Y"],
+                ["0"]
+            ],
+            "mapping": {
+                "X": f"tfcfe:crop/desert_nova[age={age}]",
+                "Y": "tfc:farmland/loam"
+            }
+        })
+    entry.add_tfc_multimultiblock_page(multiblocks, "$(bold)Desert Nova$(br)"
+                                                    "$(bold)$(l:the_world/climate#temperature)Temperature$(): 3 - 40 °C$(br)"
+                                                    "$(bold)$(l:mechanics/hydration)Hydration$(): 35 - 100 %$(br)"
+                                                    "$(bold)Nutrient$(): Phosphorus")
+
+    entry.save()
+
+    entry = category.generate_entry(
+        entry_id='getting_start',
+        name='Introduction',
+        icon='minecraft:wheat_seeds',
+        priority=True,
+        flag='&mod:mna,!mod:bloodmagic')
+
+    entry.add_text_page(title="Where to start?", text="To explore magic you need some magic flowers. "
+                                                      "To get them, you need to create some seeds "
+                                                      "and grow them like any other crops.")
+    entry.add_text_page(
+        text="Next pages will show you how to make seeds and grow them! Good luck!")
+
+    entry.add_crafting_page("tfcfe:seeds/wakebloom",
+                            text="Wakebloom is a lake crop, so try to find ingredients in there")
+    multiblocks = []
+    for age in range(6):
+        multiblocks.append({
+            "pattern": [
+                ["X"],
+                ["Y"],
+                ["0"]
+            ],
+            "mapping": {
+                "X": f"tfcfe:crop/wakebloom[age={age}]",
+                "Y": "tfc:farmland/loam"
+            }
+        })
+    entry.add_tfc_multimultiblock_page(multiblocks, "$(bold)Wakebloom$(br)"
+                                                    "$(bold)$(l:the_world/climate#temperature)Temperature$(): 3 - 40 °C$(br)"
+                                                    "$(bold)$(l:mechanics/hydration)Hydration$(): 35 - 100 %$(br)"
+                                                    "$(bold)Nutrient$(): Phosphorus")
+
+    entry.add_crafting_page("tfcfe:seeds/aum",
+                            text="Aum is a common crop, so try to find ingredients in forests")
+    multiblocks = []
+    for age in range(6):
+        multiblocks.append({
+            "pattern": [
+                ["X"],
+                ["Y"],
+                ["0"]
+            ],
+            "mapping": {
+                "X": f"tfcfe:crop/aum[age={age}]",
+                "Y": "tfc:farmland/loam"
+            }
+        })
+    entry.add_tfc_multimultiblock_page(multiblocks, "$(bold)Aum$(br)"
+                                                    "$(bold)$(l:the_world/climate#temperature)Temperature$(): 3 - 40 °C$(br)"
+                                                    "$(bold)$(l:mechanics/hydration)Hydration$(): 35 - 100 %$(br)"
+                                                    "$(bold)Nutrient$(): Phosphorus")
+
+    entry.add_crafting_page("tfcfe:seeds/cerublossom",
+                            text="Aum is a common crop, so try to find ingredients in forests")
+    multiblocks = []
+    for age in range(6):
+        multiblocks.append({
+            "pattern": [
+                ["X"],
+                ["Y"],
+                ["0"]
+            ],
+            "mapping": {
+                "X": f"tfcfe:crop/cerublossom[age={age}]",
+                "Y": "tfc:farmland/loam"
+            }
+        })
+    entry.add_tfc_multimultiblock_page(multiblocks, "$(bold)Cerublossom$(br)"
+                                                    "$(bold)$(l:the_world/climate#temperature)Temperature$(): 3 - 40 °C$(br)"
+                                                    "$(bold)$(l:mechanics/hydration)Hydration$(): 35 - 100 %$(br)"
+                                                    "$(bold)Nutrient$(): Phosphorus")
+
+    entry.add_crafting_page("tfcfe:seeds/tarma_root",
+                            text="Tarma root is a swamp crop, so try to find ingredients in there")
+    multiblocks = []
+    for age in range(6):
+        multiblocks.append({
+            "pattern": [
+                ["X"],
+                ["Y"],
+                ["0"]
+            ],
+            "mapping": {
+                "X": f"tfcfe:crop/tarma_root[age={age}]",
+                "Y": "tfc:farmland/loam"
+            }
+        })
+    entry.add_tfc_multimultiblock_page(multiblocks, "$(bold)Tarma Root$(br)"
+                                                    "$(bold)$(l:the_world/climate#temperature)Temperature$(): 3 - 40 °C$(br)"
+                                                    "$(bold)$(l:mechanics/hydration)Hydration$(): 35 - 100 %$(br)"
+                                                    "$(bold)Nutrient$(): Phosphorus")
+
+    entry.add_crafting_page("tfcfe:seeds/desert_nova",
+                            text="Desert nova is a desert crop, so try to find ingredients in there")
+    multiblocks = []
+    for age in range(6):
+        multiblocks.append({
+            "pattern": [
+                ["X"],
+                ["Y"],
+                ["0"]
+            ],
+            "mapping": {
+                "X": f"tfcfe:crop/desert_nova[age={age}]",
+                "Y": "tfc:farmland/loam"
+            }
+        })
+    entry.add_tfc_multimultiblock_page(multiblocks, "$(bold)Desert Nova$(br)"
+                                                    "$(bold)$(l:the_world/climate#temperature)Temperature$(): 3 - 40 °C$(br)"
+                                                    "$(bold)$(l:mechanics/hydration)Hydration$(): 35 - 100 %$(br)"
+                                                    "$(bold)Nutrient$(): Phosphorus")
+
+    entry.save()
+
 
 if __name__ == "__main__":
     rm = ResourceManager('tfcfe', 'src/main/resources')
     rm.lang({
         f"tfcfe.creative_tab.main": "TFC Food Extender"
     })
+    print("Generating crops")
     generate_Crops()
+    print("Generating MNA crops")
     generate_MNACrops()
+    print("Generating prepared seeds")
     generate_prepared_seeds()
+    print("Generating TFC Field guide updates")
+    update_tfc_book()
     rm.flush()
+    print("Done")

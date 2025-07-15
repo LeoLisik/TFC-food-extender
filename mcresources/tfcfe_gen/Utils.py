@@ -1,4 +1,6 @@
 import os
+from typing import Dict, Any
+
 from mcresources import ResourceManager
 
 
@@ -93,3 +95,9 @@ def generate_bloodmagic_altar_craft(
     #    recipe["conditions"] = conditions
 
     rm.recipe("../../bloodmagic/recipes/altar/" + name, "bloodmagic:altar", recipe, conditions=conditions)
+
+def mod_loaded(modid: str) -> Dict[str, Any]:
+    return {
+        "type": "forge:mod_loaded",
+        "modid": modid
+    }
