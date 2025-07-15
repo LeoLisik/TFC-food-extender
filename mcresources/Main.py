@@ -196,8 +196,8 @@ def update_tfc_book():
         }
     })
     entry.add_tfc_multimultiblock_page(multiblocks, "$(bold)Wakebloom$(br)"
-                                                    "$(bold)$(l:the_world/climate#temperature)Temperature$(): 3 - 40 °C$(br)"
-                                                    "$(bold)$(l:mechanics/hydration)Hydration$(): 35 - 100 %$(br)"
+                                                    "$(bold)$(l:the_world/climate#temperature)Temperature$(): -10 - 25 °C$(br)"
+                                                    "$(bold)$(l:mechanics/hydration)Hydration$(): 70 - 100 %$(br)"
                                                     "$(bold)Nutrient$(): Phosphorus")
 
     entry.add_crafting_page("tfcfe:prepared_seeds/aum",
@@ -216,8 +216,8 @@ def update_tfc_book():
             }
         })
     entry.add_tfc_multimultiblock_page(multiblocks, "$(bold)Aum$(br)"
-                                                    "$(bold)$(l:the_world/climate#temperature)Temperature$(): 3 - 40 °C$(br)"
-                                                    "$(bold)$(l:mechanics/hydration)Hydration$(): 35 - 100 %$(br)"
+                                                    "$(bold)$(l:the_world/climate#temperature)Temperature$(): -4 - 35 °C$(br)"
+                                                    "$(bold)$(l:mechanics/hydration)Hydration$(): 25 - 100 %$(br)"
                                                     "$(bold)Nutrient$(): Phosphorus")
 
     entry.add_crafting_page("tfcfe:prepared_seeds/cerublossom",
@@ -236,8 +236,8 @@ def update_tfc_book():
             }
         })
     entry.add_tfc_multimultiblock_page(multiblocks, "$(bold)Cerublossom$(br)"
-                                                    "$(bold)$(l:the_world/climate#temperature)Temperature$(): 3 - 40 °C$(br)"
-                                                    "$(bold)$(l:mechanics/hydration)Hydration$(): 35 - 100 %$(br)"
+                                                    "$(bold)$(l:the_world/climate#temperature)Temperature$(): -4 - 35 °C$(br)"
+                                                    "$(bold)$(l:mechanics/hydration)Hydration$(): 25 - 100 %$(br)"
                                                     "$(bold)Nutrient$(): Phosphorus")
 
     entry.add_crafting_page("tfcfe:prepared_seeds/tarma_root",
@@ -256,8 +256,8 @@ def update_tfc_book():
             }
         })
     entry.add_tfc_multimultiblock_page(multiblocks, "$(bold)Tarma Root$(br)"
-                                                    "$(bold)$(l:the_world/climate#temperature)Temperature$(): 3 - 40 °C$(br)"
-                                                    "$(bold)$(l:mechanics/hydration)Hydration$(): 35 - 100 %$(br)"
+                                                    "$(bold)$(l:the_world/climate#temperature)Temperature$(): -10 - 25 °C$(br)"
+                                                    "$(bold)$(l:mechanics/hydration)Hydration$(): 70 - 100 %$(br)"
                                                     "$(bold)Nutrient$(): Phosphorus")
 
     entry.add_crafting_page("tfcfe:prepared_seeds/desert_nova",
@@ -276,8 +276,8 @@ def update_tfc_book():
             }
         })
     entry.add_tfc_multimultiblock_page(multiblocks, "$(bold)Desert Nova$(br)"
-                                                    "$(bold)$(l:the_world/climate#temperature)Temperature$(): 3 - 40 °C$(br)"
-                                                    "$(bold)$(l:mechanics/hydration)Hydration$(): 35 - 100 %$(br)"
+                                                    "$(bold)$(l:the_world/climate#temperature)Temperature$(): 5 - 40 °C$(br)"
+                                                    "$(bold)$(l:mechanics/hydration)Hydration$(): 10 - 40 %$(br)"
                                                     "$(bold)Nutrient$(): Phosphorus")
 
     entry.save()
@@ -311,8 +311,8 @@ def update_tfc_book():
             }
         })
     entry.add_tfc_multimultiblock_page(multiblocks, "$(bold)Wakebloom$(br)"
-                                                    "$(bold)$(l:the_world/climate#temperature)Temperature$(): 3 - 40 °C$(br)"
-                                                    "$(bold)$(l:mechanics/hydration)Hydration$(): 35 - 100 %$(br)"
+                                                    "$(bold)$(l:the_world/climate#temperature)Temperature$(): -10 - 25 °C$(br)"
+                                                    "$(bold)$(l:mechanics/hydration)Hydration$(): 70 - 100 %$(br)"
                                                     "$(bold)Nutrient$(): Phosphorus")
 
     entry.add_crafting_page("tfcfe:seeds/aum",
@@ -331,8 +331,8 @@ def update_tfc_book():
             }
         })
     entry.add_tfc_multimultiblock_page(multiblocks, "$(bold)Aum$(br)"
-                                                    "$(bold)$(l:the_world/climate#temperature)Temperature$(): 3 - 40 °C$(br)"
-                                                    "$(bold)$(l:mechanics/hydration)Hydration$(): 35 - 100 %$(br)"
+                                                    "$(bold)$(l:the_world/climate#temperature)Temperature$(): -4 - 35 °C$(br)"
+                                                    "$(bold)$(l:mechanics/hydration)Hydration$(): 25 - 100 %$(br)"
                                                     "$(bold)Nutrient$(): Phosphorus")
 
     entry.add_crafting_page("tfcfe:seeds/cerublossom",
@@ -351,8 +351,8 @@ def update_tfc_book():
             }
         })
     entry.add_tfc_multimultiblock_page(multiblocks, "$(bold)Cerublossom$(br)"
-                                                    "$(bold)$(l:the_world/climate#temperature)Temperature$(): 3 - 40 °C$(br)"
-                                                    "$(bold)$(l:mechanics/hydration)Hydration$(): 35 - 100 %$(br)"
+                                                    "$(bold)$(l:the_world/climate#temperature)Temperature$(): -4 - 35 °C$(br)"
+                                                    "$(bold)$(l:mechanics/hydration)Hydration$(): 25 - 100 %$(br)"
                                                     "$(bold)Nutrient$(): Phosphorus")
 
     entry.add_crafting_page("tfcfe:seeds/tarma_root",
@@ -371,8 +371,8 @@ def update_tfc_book():
             }
         })
     entry.add_tfc_multimultiblock_page(multiblocks, "$(bold)Tarma Root$(br)"
-                                                    "$(bold)$(l:the_world/climate#temperature)Temperature$(): 3 - 40 °C$(br)"
-                                                    "$(bold)$(l:mechanics/hydration)Hydration$(): 35 - 100 %$(br)"
+                                                    "$(bold)$(l:the_world/climate#temperature)Temperature$(): -10 - 25 °C$(br)"
+                                                    "$(bold)$(l:mechanics/hydration)Hydration$(): 70 - 100 %$(br)"
                                                     "$(bold)Nutrient$(): Phosphorus")
 
     entry.add_crafting_page("tfcfe:seeds/desert_nova",
@@ -391,8 +391,8 @@ def update_tfc_book():
             }
         })
     entry.add_tfc_multimultiblock_page(multiblocks, "$(bold)Desert Nova$(br)"
-                                                    "$(bold)$(l:the_world/climate#temperature)Temperature$(): 3 - 40 °C$(br)"
-                                                    "$(bold)$(l:mechanics/hydration)Hydration$(): 35 - 100 %$(br)"
+                                                    "$(bold)$(l:the_world/climate#temperature)Temperature$(): 5 - 40 °C$(br)"
+                                                    "$(bold)$(l:mechanics/hydration)Hydration$(): 10 - 40 %$(br)"
                                                     "$(bold)Nutrient$(): Phosphorus")
 
     entry.save()
