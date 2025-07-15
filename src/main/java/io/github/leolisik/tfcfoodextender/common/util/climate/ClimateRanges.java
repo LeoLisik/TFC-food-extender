@@ -22,10 +22,8 @@ public class ClimateRanges {
 
     static {
         CROPS.putAll(mapOfKeys(Crop.class, crop -> register("crop/" +crop.getSerializedName())));
-
-        if (TFCFoodExtender.isMNALoaded) {
-            CROPS.putAll(mapOfKeys(MNACrop.class, crop -> register("crop/" +crop.getSerializedName())));
-        }
+        // Removed checking for mna because it causes errors of CubeJS
+        CROPS.putAll(mapOfKeys(MNACrop.class, crop -> register("crop/" +crop.getSerializedName())));
     }
 
     private static RegisteredDataManager.Entry<ClimateRange> register(String name)
