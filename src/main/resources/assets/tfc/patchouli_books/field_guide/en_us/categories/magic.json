@@ -1,0 +1,8 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "name": "Magic start",
+  "description": "How to start doing magic",
+  "icon": "mna:animus_dust",
+  "sortnum": 11,
+  "flag": "mod:mna"
+}

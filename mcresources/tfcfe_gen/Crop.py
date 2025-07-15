@@ -160,7 +160,6 @@ class Crop:
         })
         return self
 
-    # TODO: Vanilla craft
     def generate_seed_craft(self, ingredients, result_count=1, shaped=True, pattern=None, group=None, conditions=None):
         generate_vanilla_craft(self.rm, self.mod_id, "seeds", self.name, ingredients, result_count, shaped, pattern, group, conditions)
         return self
