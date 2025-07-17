@@ -1,6 +1,8 @@
 package io.github.leolisik.tfcfoodextender.common;
 
 import io.github.leolisik.tfcfoodextender.TFCFoodExtender;
+import io.github.leolisik.tfcfoodextender.common.blocks.FEBlocks;
+import io.github.leolisik.tfcfoodextender.common.blocks.plant.FEFruitBlocks;
 import io.github.leolisik.tfcfoodextender.common.items.FEItems;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
@@ -11,6 +13,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 import io.github.leolisik.tfcfoodextender.common.items.Food;
 
+import java.util.Map;
 import java.util.function.Supplier;
 
 public final class FECreativeTabs {
@@ -37,10 +40,22 @@ public final class FECreativeTabs {
         for (var prepared_seed : FEItems.PREPARED_SEEDS.values()) {
             accept(out, prepared_seed);
         }
+        for (FEFruitBlocks.Tree tree : FEFruitBlocks.Tree.values()) {
+            accept(out, FEBlocks.FRUIT_TREE_SAPLINGS, tree);
+            accept(out, FEBlocks.FRUIT_TREE_LEAVES, tree);
+        }
     }
 
     private static <T extends ItemLike, R extends Supplier<T>> void accept(CreativeModeTab.Output out, R reg)
     {
         out.accept(reg.get());
+    }
+
+    private static <T extends ItemLike, R extends Supplier<T>, K> void accept(CreativeModeTab.Output out, Map<K, R> map, K key)
+    {
+        if (map.containsKey(key))
+        {
+            out.accept(map.get(key).get());
+        }
     }
 }

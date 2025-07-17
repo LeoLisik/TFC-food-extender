@@ -2,6 +2,8 @@ package io.github.leolisik.tfcfoodextender.common.blockentities;
 
 import io.github.leolisik.tfcfoodextender.TFCFoodExtender;
 import io.github.leolisik.tfcfoodextender.common.blocks.FEBlocks;
+import net.dries007.tfc.common.blockentities.BerryBushBlockEntity;
+import net.dries007.tfc.util.Helpers;
 import net.dries007.tfc.util.registry.RegistrationHelpers;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.level.block.Block;
@@ -16,6 +18,10 @@ import java.util.stream.Stream;
 public class FEBlockEntities {
     public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES = DeferredRegister.create(Registries.BLOCK_ENTITY_TYPE, TFCFoodExtender.MODID);;
     public static final RegistryObject<BlockEntityType<CropBlockEntity>> CROP = register("crop", CropBlockEntity::new, FEBlocks.CROPS.values().stream());
+    public static final RegistryObject<BlockEntityType<BerryBushBlockEntity>> BERRY_BUSH = register("berry_bush", FEBerryBushBlockEntity::new, Stream.of(FEBlocks.FRUIT_TREE_LEAVES.values()).<Supplier<? extends Block>>flatMap(Helpers::flatten));
+    public static final RegistryObject<BlockEntityType<FETickCounterBlockEntity>> TICK_COUNTER = register("tick_counter", FETickCounterBlockEntity::new, Stream.of(
+            FEBlocks.FRUIT_TREE_SAPLINGS.values(),
+            FEBlocks.FRUIT_TREE_SAPLINGS.values()).<Supplier<? extends Block>>flatMap(Helpers::flatten));
 
     private static <T extends BlockEntity> RegistryObject<BlockEntityType<T>> register(String name, BlockEntityType.BlockEntitySupplier<T> factory, Stream<? extends Supplier<? extends Block>> blocks) {
         return RegistrationHelpers.register(BLOCK_ENTITIES, name, factory, blocks);

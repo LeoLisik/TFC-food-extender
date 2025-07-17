@@ -3,6 +3,7 @@ package io.github.leolisik.tfcfoodextender.common.blocks;
 import io.github.leolisik.tfcfoodextender.TFCFoodExtender;
 import io.github.leolisik.tfcfoodextender.common.blocks.crop.Crop;
 import io.github.leolisik.tfcfoodextender.common.blocks.crop.ICropLike;
+import io.github.leolisik.tfcfoodextender.common.blocks.plant.FEFruitBlocks;
 import io.github.leolisik.tfcfoodextender.common.compat.mna.blocks.crop.MNACrop;
 import io.github.leolisik.tfcfoodextender.common.items.FEItems;
 import net.dries007.tfc.util.Helpers;
@@ -23,9 +24,16 @@ import java.util.function.Supplier;
 @SuppressWarnings("unused")
 public final class FEBlocks {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(Registries.BLOCK, TFCFoodExtender.MODID);
+
     public static final Map<ICropLike, RegistryObject<Block>> CROPS = new LinkedHashMap<>();
     public static final Map<ICropLike, RegistryObject<Block>> DEAD_CROPS = new LinkedHashMap<>();
     public static final Map<ICropLike, RegistryObject<Block>> WILD_CROPS = new LinkedHashMap<>();
+
+    public static final Map<FEFruitBlocks.Tree, RegistryObject<Block>> FRUIT_TREE_LEAVES = Helpers.mapOfKeys(FEFruitBlocks.Tree.class, tree -> register("plant/" + tree.name() + "_leaves", tree::createLeaves));
+    public static final Map<FEFruitBlocks.Tree, RegistryObject<Block>> FRUIT_TREE_BRANCHES = Helpers.mapOfKeys(FEFruitBlocks.Tree.class, tree -> registerNoItem("plant/" + tree.name() + "_branch", tree::createBranch));
+    public static final Map<FEFruitBlocks.Tree, RegistryObject<Block>> FRUIT_TREE_GROWING_BRANCHES = Helpers.mapOfKeys(FEFruitBlocks.Tree.class, tree -> registerNoItem("plant/" + tree.name() + "_browing_branch", tree::createGrowingBranch));
+    public static final Map<FEFruitBlocks.Tree, RegistryObject<Block>> FRUIT_TREE_SAPLINGS = Helpers.mapOfKeys(FEFruitBlocks.Tree.class, tree -> register("plant/" + tree.name() + "_sapling", tree::createSapling));
+    // TODO: Maybe add potted_saplings
 
     static {
         CROPS.putAll(Helpers.mapOfKeys(Crop.class, crop -> registerNoItem("crop/" +crop.name(), crop::create)));

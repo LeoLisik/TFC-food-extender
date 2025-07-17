@@ -5,7 +5,8 @@ import net.minecraft.world.item.Item;
 
 @SuppressWarnings("unused")
 public enum Food {
-    BUCKWHEAT,;
+    BUCKWHEAT,
+    APRICOT;
 
     private final boolean meat;
     private final boolean fast;

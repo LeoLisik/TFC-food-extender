@@ -3,6 +3,7 @@ package io.github.leolisik.tfcfoodextender.common.util.climate;
 import io.github.leolisik.tfcfoodextender.TFCFoodExtender;
 import io.github.leolisik.tfcfoodextender.common.blocks.crop.Crop;
 import io.github.leolisik.tfcfoodextender.common.blocks.crop.ICropLike;
+import io.github.leolisik.tfcfoodextender.common.blocks.plant.FEFruitBlocks;
 import io.github.leolisik.tfcfoodextender.common.compat.mna.blocks.crop.MNACrop;
 import io.github.leolisik.tfcfoodextender.common.util.Helpers;
 import net.dries007.tfc.util.RegisteredDataManager;
@@ -19,6 +20,7 @@ import static net.dries007.tfc.util.Helpers.mapOfKeys;
 public class ClimateRanges {
     public static final Map<ICropLike, Supplier<ClimateRange>> CROPS = new LinkedHashMap<>();
 
+    public static final Map<FEFruitBlocks.Tree, Supplier<ClimateRange>> FRUIT_TREES = net.dries007.tfc.util.Helpers.mapOfKeys(FEFruitBlocks.Tree.class, tree -> register("plant/" + tree.name() + "_tree"));
 
     static {
         CROPS.putAll(mapOfKeys(Crop.class, crop -> register("crop/" +crop.getSerializedName())));
