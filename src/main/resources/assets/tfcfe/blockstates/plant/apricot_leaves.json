@@ -1,0 +1,17 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "variants": {
+    "lifecycle=flowering": {
+      "model": "tfcfe:block/plant/apricot_flowering_leaves"
+    },
+    "lifecycle=fruiting": {
+      "model": "tfcfe:block/plant/apricot_fruiting_leaves"
+    },
+    "lifecycle=dormant": {
+      "model": "tfcfe:block/plant/apricot_dry_leaves"
+    },
+    "lifecycle=healthy": {
+      "model": "tfcfe:block/plant/apricot_leaves"
+    }
+  }
+}
