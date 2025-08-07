@@ -100,7 +100,7 @@ def generate_MNACrops():
      .generate_loot_table("mna:desert_nova")
      .generate_climate_range(10, 40, 10, 5, 40, 10)
      .generate_bloodmagic_altar_seed_craft({"item": "tfcfe:prepared_seeds/desert_nova"}, 2000, 5, 5, 1)
-     .generate_seed_craft(["#tfc:seeds", "#forge:sand", "tfc:plant/barrel_cactus"], 1, False, conditions=[
+     .generate_seed_craft(["#tfc:seeds", "#forge:sandstone", "minecraft:water_bucket"], 1, False, conditions=[
         {
             "type": "forge:not",
             "value": {
@@ -144,7 +144,7 @@ def generate_prepared_seeds():
     (Item(rm, "prepared_seeds", "desert_nova", "tfcfe")
     .generate_base()
     .generate_vanilla_craft(
-        ingredients=['#tfc:seeds', '#forge:sand', 'tfc:plant/barrel_cactus'],
+        ingredients=['#tfc:seeds', '#forge:sandstone', 'minecraft:water_bucket'],
         result_count=1,
         shaped=False))
 

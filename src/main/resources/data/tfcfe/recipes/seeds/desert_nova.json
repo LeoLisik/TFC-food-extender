@@ -19,10 +19,10 @@
             "tag": "tfc:seeds"
           },
           {
-            "tag": "forge:sand"
+            "tag": "forge:sandstone"
           },
           {
-            "item": "tfc:plant/barrel_cactus"
+            "item": "minecraft:water_bucket"
           }
         ],
         "result": {
